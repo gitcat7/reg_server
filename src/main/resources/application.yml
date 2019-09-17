@@ -1,0 +1,25 @@
+spring:
+    datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@localhost:1521:database
+      username: zhangsan
+      password: abc
+    application:
+      name: spring-cloud-eureka-server
+server:
+    port: 8888
+eureka:
+    instance:
+      hostname: 10.1.14.39
+    client:
+      registerWithEureka: false
+      fetchRegistry: false
+      serviceUrl:
+        defaultZone: http://10.1.14.39:8888/eureka/
+mybatis-plus:
+  global-config:
+    db-column-underline: true
+    id-type: 0
+  type-aliases-package: com.sz.p2p.entity
+  mapper-locations: classpath*:com/sz/p2p/dao/*Mapper.xml
+  
