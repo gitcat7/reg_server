@@ -56,6 +56,10 @@ public class Credit extends Model<Credit> {
      * 还款笔数
      */
     private Double returnMonNum;
+    /**
+     * 信用卡开户个数
+     */
+    private Double cardOpenCount;
 
 
     public Double getCreditId() {
@@ -130,7 +134,15 @@ public class Credit extends Model<Credit> {
         this.returnMonNum = returnMonNum;
     }
 
-    @Override
+    public Double getCardOpenCount() {
+		return cardOpenCount;
+	}
+
+	public void setCardOpenCount(Double cardOpenCount) {
+		this.cardOpenCount = cardOpenCount;
+	}
+
+	@Override
     protected Serializable pkVal() {
         return this.creditId;
     }
@@ -147,6 +159,7 @@ public class Credit extends Model<Credit> {
         ", availableMon=" + availableMon +
         ", usedMon=" + usedMon +
         ", returnMonNum=" + returnMonNum +
+        ", cardOpenCount="+ cardOpenCount+
         "}";
     }
 }
